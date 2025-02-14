@@ -1,0 +1,131 @@
+import os
+import launch
+import launch_ros
+from launch import LaunchDescription
+from launch.actions import ExecuteProcess
+from launch_ros.actions import Node
+from launch.substitutions import Command
+
+from ament_index_python.packages import get_package_share_directory
+
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+
+def generate_launch_description():
+    # Path to the URDF/Xacro file
+    pkg_share = os.path.join(os.path.expanduser('~'), 'arm_driver_ws', 'src', 'tmr_ros2', 'tm_description')
+    # rviz_share = get_package_share_directory('') # whichever package has the rviz config, make an argument later (same as robot maybe?)
+    urdf_file = os.path.join(pkg_share, 'xacro', 'tm5-700.urdf.xacro')
+    robot_description = Command(['xacro ', urdf_file])
+
+    # # Spawn the robot in Gazebo Fortress
+    # ros_ign_sim = Node(
+    #     package='ros_gz_sim',
+    #     executable='create',
+    #     arguments=['-name', 'my_robot', '-topic', 'robot_description'],
+    #     output='screen'
+    # )
+
+    pkg_project_gazebo = get_package_share_directory('ros_gz_example_gazebo')
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+
+    # Setup to launch the simulator and Gazebo world
+    gz_sim = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+        launch_arguments={'gz_args': PathJoinSubstitution([
+            pkg_project_gazebo,
+            'worlds',
+            'tm5-700.sdf'
+        ])}.items(),
+    )
+
+    pkg_project_bringup = get_package_share_directory('ros_gz_example_bringup')
+
+    # Bridge ROS topics and Gazebo messages for establishing communication
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[{
+            'config_file': os.path.join(pkg_project_bringup, 'config', 'tm5-700_bridge.yaml'),
+            'qos_overrides./tf_static.publisher.durability': 'transient_local',
+        }],
+        output='screen'
+    )
+
+    rviz2 = Node(
+        package='rviz2',
+        executable='rviz2',
+        # arguments=['-d', os.path.join(rviz_share, 'config', 'rrbot.rviz')], # change last arg to actual robot name
+        condition=IfCondition(LaunchConfiguration('rviz'))
+    )
+
+    pkg_project_description = get_package_share_directory('ros_gz_example_description')
+
+    sdf_file  =  os.path.join(pkg_project_description, 'models', 'tm5-700_rviz', 'model.sdf')
+    with open(sdf_file, 'r') as infp:
+        robot_desc = infp.read()
+
+    joint_state_publisher_gui = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        name='joint_state_publisher_gui',
+        arguments=[sdf_file],
+        output=['screen']
+    )
+
+    # controller manager? -----------------------------------------------------
+    controller_manager = launch_ros.actions.Node(
+        package="controller_manager",
+        executable="ros2_control_node",
+        parameters=[
+            {"robot_description": robot_desc},
+        ],
+        output="screen"
+    )
+
+    load_joint_state_broadcaster = launch_ros.actions.Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen",
+    )
+
+    load_arm_controller = launch_ros.actions.Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["tmr_arm_controller"],
+        output="screen",
+    )
+
+    # controller manager? -----------------------------------------------------
+
+    # Start Robot State Publisher
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        output='both',
+        parameters=[
+            {'use_sim_time': True},
+            {'robot_description': robot_desc}
+        ]
+    )
+
+    return LaunchDescription([
+        # Start Gazebo Fortress
+        gz_sim,
+        DeclareLaunchArgument('rviz', default_value='true',
+                              description='Open RViz.'),
+        bridge,
+        # joint_state_publisher_gui,        # only use this when not using gazebo, it gives joint positions to rviz and supercedes the actual gazebo joint values
+        robot_state_publisher,
+        rviz2,
+        controller_manager,
+        load_joint_state_broadcaster,
+        load_arm_controller
+    ])
