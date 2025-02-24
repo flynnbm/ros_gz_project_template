@@ -478,7 +478,8 @@
     </ros2_control>
 
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>package://tm5-700_moveit_config/config/ros2_controllers.yaml</parameters>
+      <!-- <parameters>package://tm5-700_moveit_config/config/ros2_controllers.yaml</parameters> -->
+      <parameters>package://tm5-700_moveit_config/config/controllers.yaml</parameters>
     </plugin>
 
 
