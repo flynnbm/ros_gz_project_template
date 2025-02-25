@@ -27,9 +27,6 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 
 from launch_ros.actions import SetParameter
 
-# -----------------------------------------------------------------------------------------------------
-# Functions for reading files
-
 def load_file(package_name, file_path):
     package_path = get_package_share_directory(package_name)
     absolute_file_path = os.path.join(package_path, file_path)
@@ -51,8 +48,6 @@ def load_yaml(package_name, file_path):
     except OSError:  # parent of IOError, OSError *and* WindowsError where available
         return None
 
-# -----------------------------------------------------------------------------------------------------
-
 def generate_launch_description():
     args = []
     if (len(sys.argv) >= 5):
@@ -67,21 +62,10 @@ def generate_launch_description():
     moveit_config_path = 'tm5-700_moveit_config'    
     srdf_path = 'config/tm5-700.srdf'
     rviz_path = '/launch/run_move_group.rviz'     
-    
-    # robot_description_config = xacro.process_file(
-    #     os.path.join(
-    #         get_package_share_directory(description_path),
-    #         'xacro',
-    #         xacro_path,
-    #     )
-    # )
 
     # Robot SDF Description
     pkg_project_description = get_package_share_directory('ros_gz_example_description')
     robot_description_config  =  xacro.process_file(os.path.join(pkg_project_description, 'models', 'tm5-700_rviz', 'model.sdf'))
-    # with open(sdf_file, 'r') as infp:
-    #     robot_description_sdf = infp.read()
-
     robot_description = {'robot_description': robot_description_config.toxml()}
 
     # SRDF Configuration
@@ -105,17 +89,8 @@ def generate_launch_description():
     ompl_planning_pipeline_config['ompl'].update(ompl_planning_yaml)
 
     # Trajectory Execution Configuration
-    # Controllers
-    # controllers_yaml = load_yaml(moveit_config_path, 'config/ros2_controllers.yaml')
     controllers_yaml = load_yaml(moveit_config_path, 'config/controllers.yaml')
     moveit_controllers = {'moveit_simple_controller_manager': controllers_yaml, 'moveit_controller_manager': 'moveit_simple_controller_manager/MoveItSimpleControllerManager'}
-
-    # load_joint_state_broadcaster = launch_ros.actions.Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=["joint_state_broadcaster"],
-    #     output="screen",
-    # )
 
     # Trajectory Execution Functionality
     trajectory_execution = {
@@ -148,6 +123,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={'gz_args': PathJoinSubstitution([
+            '-r',
             pkg_project_gazebo,
             'worlds',
             'tm5-700.sdf'
@@ -224,15 +200,6 @@ def generate_launch_description():
         parameters=[robot_description]
     )
 
-    # controller_manager = launch_ros.actions.Node(
-    #     package="controller_manager",
-    #     executable="ros2_control_node",
-    #     parameters=[
-    #         {"robot_description": robot_description},
-    #     ],
-    #     output="screen"
-    # )
-
     load_arm_controller = launch_ros.actions.Node(
         package="controller_manager",
         executable="spawner",
@@ -250,13 +217,10 @@ def generate_launch_description():
         [
             gz_sim,
             bridge,
-            #tm_driver_node,
             rviz_node,
             static_tf,
             robot_state_publisher,
-            # load_joint_state_broadcaster,
             run_move_group_node,
-            # controller_manager,
             load_arm_controller,
             set_sim_time,
         ]
