@@ -35,48 +35,48 @@ def generate_launch_description():
 
     pkg_project_bringup = get_package_share_directory('ros_gz_example_bringup')
 
-    # Bridge ROS topics and Gazebo messages for establishing communication
-    bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        parameters=[{
-            'config_file': os.path.join(pkg_project_bringup, 'config', 'tm5-700_bridge.yaml'),
-            'qos_overrides./tf_static.publisher.durability': 'transient_local',
-        }],
-        output='screen'
-    )
+    # # Bridge ROS topics and Gazebo messages for establishing communication
+    # bridge = Node(
+    #     package='ros_gz_bridge',
+    #     executable='parameter_bridge',
+    #     parameters=[{
+    #         'config_file': os.path.join(pkg_project_bringup, 'config', 'tm5-700_bridge.yaml'),
+    #         'qos_overrides./tf_static.publisher.durability': 'transient_local',
+    #     }],
+    #     output='screen'
+    # )
 
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        # arguments=['-d', os.path.join(rviz_share, 'config', 'rrbot.rviz')], # change last arg to actual robot name
-        condition=IfCondition(LaunchConfiguration('rviz'))
-    )
+    # rviz_node = Node(
+    #     package='rviz2',
+    #     executable='rviz2',
+    #     # arguments=['-d', os.path.join(rviz_share, 'config', 'rrbot.rviz')], # change last arg to actual robot name
+    #     condition=IfCondition(LaunchConfiguration('rviz'))
+    # )
 
-    # controller manager? -----------------------------------------------------
+    # # controller manager? -----------------------------------------------------
     
-    controller_manager = launch_ros.actions.Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[
-            {"robot_description": robot_description},
-        ],
-        output="screen"
-    )
+    # controller_manager = launch_ros.actions.Node(
+    #     package="controller_manager",
+    #     executable="ros2_control_node",
+    #     parameters=[
+    #         {"robot_description": robot_description},
+    #     ],
+    #     output="screen"
+    # )
 
-    load_joint_state_broadcaster = launch_ros.actions.Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_state_broadcaster"],
-        output="screen",
-    )
+    # load_joint_state_broadcaster = launch_ros.actions.Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=["joint_state_broadcaster"],
+    #     output="screen",
+    # )
 
-    load_arm_controller = launch_ros.actions.Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["tmr_arm_controller"],
-        output="screen",
-    )
+    # load_arm_controller = launch_ros.actions.Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=["tmr_arm_controller"],
+    #     output="screen",
+    # )
 
     # controller manager? -----------------------------------------------------
 
@@ -97,11 +97,11 @@ def generate_launch_description():
         gz_sim,
         DeclareLaunchArgument('rviz', default_value='true',
                               description='Open RViz.'),
-        bridge,
+        # bridge,
         # joint_state_publisher_gui,        # only use this when not using gazebo, it gives joint positions to rviz and supercedes the actual gazebo joint values
         robot_state_publisher,
-        rviz_node,
-        controller_manager,
-        load_joint_state_broadcaster,
-        load_arm_controller
+        # rviz_node,
+        # controller_manager,
+        # load_joint_state_broadcaster,
+        # load_arm_controller
     ])
