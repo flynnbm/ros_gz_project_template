@@ -119,31 +119,34 @@ def generate_launch_description():
     pkg_project_gazebo = get_package_share_directory('ros_gz_example_gazebo')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
-    gz_sim = IncludeLaunchDescription(
+    gz_sim_DART = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args': PathJoinSubstitution([
-            '-r',
-            pkg_project_gazebo,
-            'worlds',
-            'panda.sdf'
-        ])}.items(),
+        launch_arguments=[
+            ('gz_args', f"-r {pkg_project_gazebo}/worlds/panda.sdf")
+        ],
+    )
+
+    gz_sim_bullet_featherstone = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+        launch_arguments=[
+            ('gz_args', f"-r {pkg_project_gazebo}/worlds/panda.sdf --physics-engine gz-physics-bullet-featherstone-plugin")
+        ],
     )
 
     # ROS <--> Gazebo Sim Communication Bridge
     pkg_project_bringup = get_package_share_directory('ros_gz_example_bringup')
 
-    # ===========================================================================fix this later===========================================================================
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         parameters=[{
-            'config_file': os.path.join(pkg_project_bringup, 'config', 'tm5-700_bridge.yaml'),
+            'config_file': os.path.join(pkg_project_bringup, 'config', 'panda_bridge.yaml'),
             'qos_overrides./tf_static.publisher.durability': 'transient_local',
         }],
         output='screen'
     )
-    # ===========================================================================fix this later===========================================================================
 
     # Start the actual move_group node/action server
     run_move_group_node = Node(
@@ -224,7 +227,7 @@ def generate_launch_description():
     # Launching all the nodes
     return LaunchDescription(
         [
-            gz_sim,
+            gz_sim_bullet_featherstone,
             bridge,
             rviz_node,
             static_tf,
