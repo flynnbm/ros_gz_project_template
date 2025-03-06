@@ -534,6 +534,15 @@
       </visual>
     </link>
 
+    <link name="rgbd_camera_link">
+      <pose relative_to="panda_link7">0.01 0 0.01 0 0 0</pose>
+    </link>
+
+    <joint name="rgbd_camera_joint" type="fixed">
+      <parent>panda_link7</parent>
+      <child>rgbd_camera_link</child>
+    </joint>    
+
     <ros2_control name="MyRobotHardware" type="system">
         <hardware>
             <plugin>gz_ros2_control/GazeboSimSystem</plugin>
@@ -596,13 +605,13 @@
             </state_interface>
             <state_interface name="velocity"/>
         </joint>
-        <joint name="panda_finger_joint2">
+        <!-- <joint name="panda_finger_joint2">
             <command_interface name="position"/>
             <state_interface name="position">
               <param name="initial_value">0.01</param>
             </state_interface>
             <state_interface name="velocity"/>
-        </joint>
+        </joint> -->
 
     </ros2_control>
 
