@@ -65,6 +65,7 @@ def generate_launch_description():
 
     # Robot SDF Description
     pkg_project_description = get_package_share_directory('ros_gz_example_description')
+    # Currently pointing at modified SDF with package:// URIs for meshes, needs to be reverted to using urdf.xacro
     robot_description_config  =  xacro.process_file(os.path.join(pkg_project_description, 'models', 'tm5-700_rviz', 'model.sdf'))
     robot_description = {'robot_description': robot_description_config.toxml()}
 
