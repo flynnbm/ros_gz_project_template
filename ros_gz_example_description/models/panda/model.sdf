@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link0.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link0.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +28,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link0.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -72,7 +72,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link1.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link1.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -81,7 +81,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link1.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -125,7 +125,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link2.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link2.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -134,7 +134,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link2.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -178,7 +178,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link3.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link3.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -187,7 +187,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link3.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -231,7 +231,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link4.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link4.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -240,7 +240,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link4.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link4.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -284,7 +284,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link5.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link5.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -293,7 +293,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link5.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link5.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -337,7 +337,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link6.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link6.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -346,7 +346,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link6.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link6.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -390,7 +390,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/link7.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/link7.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -399,7 +399,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/hand.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/hand.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -408,7 +408,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/link7.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/link7.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -417,7 +417,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/hand.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/hand.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -461,7 +461,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/finger.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/finger.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -470,7 +470,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/finger.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -519,7 +519,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/collision/finger.stl</uri>
+            <uri>model://panda_ros2/panda_description/meshes/collision/finger.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -528,7 +528,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://panda_description/meshes/visual/finger.dae</uri>
+            <uri>model://panda_ros2/panda_description/meshes/visual/finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
