@@ -534,14 +534,41 @@
       </visual>
     </link>
 
-    <link name="rgbd_camera_link">
+    <joint name="panda_camera_joint" type="fixed">
       <pose relative_to="panda_link7">0.01 0 0.01 0 0 0</pose>
-    </link>
-    
-    <joint name="rgbd_camera_joint" type="fixed">
       <parent>panda_link7</parent>
       <child>rgbd_camera_link</child>
-    </joint>    
+    </joint>
+    <link name="rgbd_camera_link">
+      <pose relative_to="panda_camera_joint">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint8" type="fixed">
+      <pose relative_to="panda_link7">0 0 0.107 0 0 0</pose>
+      <parent>panda_link7</parent>
+      <child>panda_link8</child>
+    </joint>
+    <link name='panda_link8'>
+      <pose relative_to="panda_joint8">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint9" type="fixed">
+      <pose relative_to="panda_link8">0 0 0 0 0 -0.78539816339699997</pose>
+      <parent>panda_link8</parent>
+      <child>panda_hand</child>
+    </joint>
+    <link name='panda_hand'>
+      <pose relative_to="panda_joint9">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint10" type="fixed">
+      <pose relative_to="panda_hand">0 0 0.100 0 0 0</pose>
+      <parent>panda_hand</parent>
+      <child>panda_tcp</child>
+    </joint>
+    <link name='panda_tcp'>
+      <pose relative_to="panda_joint10">0 0 0 0 0 0</pose>
+    </link>
 
     <ros2_control name="MyRobotHardware" type="system">
         <hardware>
@@ -605,13 +632,6 @@
             </state_interface>
             <state_interface name="velocity"/>
         </joint>
-        <!-- <joint name="panda_finger_joint2">
-            <command_interface name="position"/>
-            <state_interface name="position">
-              <param name="initial_value">0.01</param>
-            </state_interface>
-            <state_interface name="velocity"/>
-        </joint> -->
 
     </ros2_control>
 
@@ -619,17 +639,5 @@
       <parameters>/home/brian/arm_driver_ws/install/panda_moveit_config/share/panda_moveit_config/config/controllers.yaml</parameters>
     </plugin>
 
-    <frame name='panda_hand_joint' attached_to='panda_link8'>
-      <pose>0 0 0 0 0 -0.78539816339699997</pose>
-    </frame>
-    <frame name='panda_hand' attached_to='panda_hand_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
-    <frame name='panda_joint8' attached_to='panda_link7'>
-      <pose>0 0 0.107 0 0 0</pose>
-    </frame>
-    <frame name='panda_link8' attached_to='panda_joint8'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
   </model>
 </sdf>

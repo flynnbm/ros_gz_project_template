@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link0.stl</uri>
+            <uri>model://panda_description/meshes/collision/link0.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +28,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link0.dae</uri>
+            <uri>model://panda_description/meshes/visual/link0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -72,7 +72,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link1.stl</uri>
+            <uri>model://panda_description/meshes/collision/link1.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -81,7 +81,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link1.dae</uri>
+            <uri>model://panda_description/meshes/visual/link1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -125,7 +125,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link2.stl</uri>
+            <uri>model://panda_description/meshes/collision/link2.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -134,7 +134,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link2.dae</uri>
+            <uri>model://panda_description/meshes/visual/link2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -178,7 +178,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link3.stl</uri>
+            <uri>model://panda_description/meshes/collision/link3.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -187,7 +187,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link3.dae</uri>
+            <uri>model://panda_description/meshes/visual/link3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -231,7 +231,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link4.stl</uri>
+            <uri>model://panda_description/meshes/collision/link4.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -240,7 +240,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link4.dae</uri>
+            <uri>model://panda_description/meshes/visual/link4.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -284,7 +284,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link5.stl</uri>
+            <uri>model://panda_description/meshes/collision/link5.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -293,7 +293,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link5.dae</uri>
+            <uri>model://panda_description/meshes/visual/link5.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -337,7 +337,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link6.stl</uri>
+            <uri>model://panda_description/meshes/collision/link6.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -346,7 +346,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link6.dae</uri>
+            <uri>model://panda_description/meshes/visual/link6.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -390,7 +390,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/link7.stl</uri>
+            <uri>model://panda_description/meshes/collision/link7.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -399,7 +399,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/hand.stl</uri>
+            <uri>model://panda_description/meshes/collision/hand.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -408,7 +408,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/link7.dae</uri>
+            <uri>model://panda_description/meshes/visual/link7.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -417,7 +417,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/hand.dae</uri>
+            <uri>model://panda_description/meshes/visual/hand.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -461,7 +461,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/finger.stl</uri>
+            <uri>model://panda_description/meshes/collision/finger.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -470,7 +470,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/finger.dae</uri>
+            <uri>model://panda_description/meshes/visual/finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -519,7 +519,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/collision/finger.stl</uri>
+            <uri>model://panda_description/meshes/collision/finger.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -528,20 +528,47 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/brian/arm_driver_ws/src/panda_ros2/panda_description/meshes/visual/finger.dae</uri>
+            <uri>model://panda_description/meshes/visual/finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
 
-    <link name="rgbd_camera_link">
+    <joint name="panda_camera_joint" type="fixed">
       <pose relative_to="panda_link7">0.01 0 0.01 0 0 0</pose>
-    </link>
-
-    <joint name="rgbd_camera_joint" type="fixed">
       <parent>panda_link7</parent>
       <child>rgbd_camera_link</child>
-    </joint>    
+    </joint>
+    <link name="rgbd_camera_link">
+      <pose relative_to="panda_camera_joint">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint8" type="fixed">
+      <pose relative_to="panda_link7">0 0 0.107 0 0 0</pose>
+      <parent>panda_link7</parent>
+      <child>panda_link8</child>
+    </joint>
+    <link name='panda_link8'>
+      <pose relative_to="panda_joint8">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint9" type="fixed">
+      <pose relative_to="panda_link8">0 0 0 0 0 -0.78539816339699997</pose>
+      <parent>panda_link8</parent>
+      <child>panda_hand</child>
+    </joint>
+    <link name='panda_hand'>
+      <pose relative_to="panda_joint9">0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="panda_joint10" type="fixed">
+      <pose relative_to="panda_hand">0 0 0.100 0 0 0</pose>
+      <parent>panda_hand</parent>
+      <child>panda_tcp</child>
+    </joint>
+    <link name='panda_tcp'>
+      <pose relative_to="panda_joint10">0 0 0 0 0 0</pose>
+    </link>
 
     <ros2_control name="MyRobotHardware" type="system">
         <hardware>
@@ -605,13 +632,6 @@
             </state_interface>
             <state_interface name="velocity"/>
         </joint>
-        <!-- <joint name="panda_finger_joint2">
-            <command_interface name="position"/>
-            <state_interface name="position">
-              <param name="initial_value">0.01</param>
-            </state_interface>
-            <state_interface name="velocity"/>
-        </joint> -->
 
     </ros2_control>
 
@@ -619,17 +639,5 @@
       <parameters>/home/brian/arm_driver_ws/install/panda_moveit_config/share/panda_moveit_config/config/ros2_controllers.yaml</parameters>
     </plugin>
 
-    <frame name='panda_hand_joint' attached_to='panda_link8'>
-      <pose>0 0 0 0 0 -0.78539816339699997</pose>
-    </frame>
-    <frame name='panda_hand' attached_to='panda_hand_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
-    <frame name='panda_joint8' attached_to='panda_link7'>
-      <pose>0 0 0.107 0 0 0</pose>
-    </frame>
-    <frame name='panda_link8' attached_to='panda_joint8'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
   </model>
 </sdf>
