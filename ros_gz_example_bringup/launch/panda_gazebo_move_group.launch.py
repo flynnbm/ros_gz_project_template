@@ -57,8 +57,6 @@ def generate_launch_description():
             i = i + 1
 
     # Configure robot_description
-    description_path = 'panda_description'
-    xacro_path = 'panda.urdf.xacro'
     moveit_config_path = 'panda_moveit_config'    
     srdf_path = 'config/panda.srdf'
     rviz_path = '/launch/run_move_group.rviz'     
