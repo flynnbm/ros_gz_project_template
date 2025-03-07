@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/collision/tm5-base_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/collision/tm5-base_c.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +28,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/visual/tm5-base.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/visual/tm5-base.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -76,7 +76,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_400w_01_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_400w_01_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -93,7 +93,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_400w_01.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_400w_01.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -142,7 +142,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-700/collision/tm5-700_arm1_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-700/collision/tm5-700_arm1_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -159,7 +159,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-700/visual/tm5-700_arm1.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-700/visual/tm5-700_arm1.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -208,7 +208,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-700/collision/tm5-700_arm2_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-700/collision/tm5-700_arm2_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -225,7 +225,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-700/visual/tm5-700_arm2.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-700/visual/tm5-700_arm2.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -274,7 +274,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_100w_01_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_100w_01_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -291,7 +291,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_100w_01.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_100w_01.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -340,7 +340,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_100w_02_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_100w_02_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -357,7 +357,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_100w_02.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_100w_02.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -406,7 +406,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_ee_c.stl</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/collision/tmr_ee_c.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -423,7 +423,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/csrobot/arm_driver_ws/src/tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_ee.obj</uri>
+            <uri>model://tmr_ros2/tm_description/meshes/tm5-900/visual/tmr_ee.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -478,7 +478,7 @@
     </ros2_control>
 
     <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
-      <parameters>/home/csrobot/arm_driver_ws/install/tm5-700_moveit_config/share/tm5-700_moveit_config/config/ros2_controllers.yaml</parameters>
+      <parameters>/home/brian/arm_driver_ws/install/tm5-700_moveit_config/share/tm5-700_moveit_config/config/ros2_controllers.yaml</parameters>
     </plugin>
 
 
